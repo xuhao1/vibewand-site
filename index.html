@@ -40,7 +40,6 @@
             <a href="#apps"><span lang="zh">应用</span><span lang="en">Apps</span></a>
             <a href="#computer-use">Computer use</a>
             <a href="#install"><span lang="zh">安装</span><span lang="en">Install</span></a>
-            <a href="https://github.com/xuhao1/VibeWand">GitHub</a>
         </nav>
         <button class="lang-switch" type="button" id="lang-switch" aria-label="Switch language / 切换语言"><span lang="zh">EN</span><span lang="en">中文</span></button>
     </div>
@@ -55,14 +54,27 @@
         <h1 class="wordmark">Vibe<span>Wand</span></h1>
         <p class="cn-name" lang="zh">如意魔棒</p>
         <p class="tagline">One wand to command them all.</p>
-        <p class="lead" lang="zh">一个旋钮、手柄或遥控器，再加一句话，操作 Mac 上的各种 AI 工具：Codex、Claude、DeepSeek Harness、WorkBuddy，终端里的 Claude Code、Codex、OpenCode，以及浏览器、微信和飞书。</p>
-        <p class="lead" lang="en">A dial, a game controller or a remote, plus a spoken sentence, for driving the AI tools on your Mac: Codex, Claude, DeepSeek Harness and WorkBuddy, Claude Code, Codex and OpenCode in a terminal, and browsers, WeChat and Feishu.</p>
+        <p class="lead" lang="zh">一个旋钮、手柄或遥控器，再加一句话，操作 Mac 上的各种 AI 工具。</p>
+        <p class="lead" lang="en">A dial, a game controller or a remote, plus a spoken sentence, for driving the AI tools on your Mac.</p>
+        <ul class="apps-strip">
+            <li><img src="img/apps/codex.webp" width="68" height="68" alt="">Codex</li>
+            <li><img src="img/apps/claude.webp" width="68" height="68" alt="">Claude</li>
+            <li><img src="img/apps/deepseek-harness.webp" width="68" height="68" alt="">DeepSeek Harness</li>
+            <li><img src="img/apps/workbuddy.webp" width="68" height="68" alt="">WorkBuddy</li>
+            <li><img src="img/apps/iterm2.webp" width="68" height="68" alt="">iTerm2</li>
+            <li><img src="img/apps/safari.webp" width="68" height="68" alt="">Safari</li>
+            <li><img src="img/apps/chrome.webp" width="68" height="68" alt="">Chrome</li>
+            <li><img src="img/apps/wechat.webp" width="68" height="68" alt=""><span lang="zh">微信</span><span lang="en">WeChat</span></li>
+            <li><img src="img/apps/feishu.webp" width="68" height="68" alt=""><span lang="zh">飞书</span><span lang="en">Feishu</span></li>
+        </ul>
+        <p class="caption" lang="zh">还有 iTerm2 里的 Claude Code、Codex、OpenCode，以及 Edge、Brave、Firefox、Opera、Vivaldi。</p>
+        <p class="caption" lang="en">Also Claude Code, Codex and OpenCode in iTerm2, and Edge, Brave, Firefox, Opera and Vivaldi.</p>
         <div class="cta">
-            <a class="btn primary" href="https://github.com/xuhao1/VibeWand/releases/download/v0.9.0/VibeWand-0.9.0-macOS-arm64.zip">
+            <a class="btn primary" href="https://github.com/xuhao1/vibewand-site/releases/download/v0.9.0/VibeWand-0.9.0-macOS-arm64.zip">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8.5M4.5 7.5 8 11l3.5-3.5M3 14h10"/></svg>
                 <span lang="zh">下载 0.9.0（Apple Silicon）</span><span lang="en">Download 0.9.0 (Apple Silicon)</span>
             </a>
-            <a class="btn" href="https://github.com/xuhao1/VibeWand"><span lang="zh">在 GitHub 上查看</span><span lang="en">View on GitHub</span></a>
+            <a class="btn" href="#apps"><span lang="zh">在每个应用里能做什么</span><span lang="en">What it does in each app</span></a>
         </div>
         <p class="caption" lang="zh">macOS 26 以上 · M 系列芯片 · 约 84 MB</p>
         <p class="caption" lang="en">macOS 26 or later · M-series Mac · about 84 MB</p>
@@ -207,75 +219,51 @@
             <table>
                 <thead>
                     <tr>
-                        <th><span lang="zh">类别</span><span lang="en">Kind</span></th>
-                        <th><span lang="zh">程序</span><span lang="en">Program</span></th>
-                        <th><span lang="zh">会话</span><span lang="en">Chats</span></th>
-                        <th><span lang="zh">模型 / 强度</span><span lang="en">Model / effort</span></th>
-                        <th><span lang="zh">听写</span><span lang="en">Dictation</span></th>
+                        <th scope="col"><span lang="zh">程序</span><span lang="en">Program</span></th>
+                        <th scope="col"><span lang="zh">滚动<wbr>阅读</span><span lang="en">Scroll</span></th>
+                        <th scope="col"><span lang="zh">切换<wbr>会话</span><span lang="en">Switch chats</span></th>
+                        <th scope="col"><span lang="zh">换模型</span><span lang="en">Change model</span></th>
+                        <th scope="col"><span lang="zh">调推理<wbr>强度</span><span lang="en">Set effort</span></th>
+                        <th scope="col"><span lang="zh">听写</span><span lang="en">Dictate</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th rowspan="4"><span lang="zh">AI 桌面应用</span><span lang="en">AI desktop apps</span></th>
-                        <td class="prog">Codex</td>
-                        <td><span lang="zh">⌘K 面板</span><span lang="en">⌘K palette</span></td>
-                        <td><span lang="zh">强度滑块，再按一次进模型列表</span><span lang="en">Effort slider; press again for the model list</span></td>
-                        <td>✓</td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/codex.webp" width="32" height="32" loading="lazy" alt=""></span><span>Codex</span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                     </tr>
                     <tr>
-                        <td class="prog">Claude</td>
-                        <td><span lang="zh">⌘K 面板</span><span lang="en">⌘K palette</span></td>
-                        <td><span lang="zh">模型菜单，确认后进强度滑块</span><span lang="en">Model menu, then the effort slider</span></td>
-                        <td>✓</td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/claude.webp" width="32" height="32" loading="lazy" alt=""></span><span>Claude</span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                     </tr>
                     <tr>
-                        <td class="prog">DeepSeek Harness</td>
-                        <td><span lang="zh">侧边栏会话列表</span><span lang="en">Sidebar chat list</span></td>
-                        <td><span lang="zh">模型菜单及其子菜单</span><span lang="en">Model menu and its submenu</span></td>
-                        <td>✓</td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/deepseek-harness.webp" width="32" height="32" loading="lazy" alt=""></span><span>DeepSeek Harness</span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td>
                     </tr>
                     <tr>
-                        <td class="prog">WorkBuddy</td>
-                        <td><span lang="zh">侧边栏搜索任务；⌘K 回退</span><span lang="en">Sidebar task search; ⌘K fallback</span></td>
-                        <td><span lang="zh">模型菜单</span><span lang="en">Model menu</span></td>
-                        <td><span lang="zh">松开后粘贴</span><span lang="en">Pasted on release</span></td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/workbuddy.webp" width="32" height="32" loading="lazy" alt=""></span><span>WorkBuddy</span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓<small><span lang="zh">任务</span><span lang="en">tasks</span></small></td><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td>
                     </tr>
                     <tr>
-                        <th><span lang="zh">命令行 agent</span><span lang="en">Command-line agents</span></th>
-                        <td class="prog"><span lang="zh">iTerm2 里的 Claude Code、Codex、OpenCode</span><span lang="en">Claude Code, Codex and OpenCode in iTerm2</span></td>
-                        <td><span lang="zh">输入 <code>/resume</code></span><span lang="en">Types <code>/resume</code></span></td>
-                        <td><span lang="zh">输入 <code>/model</code></span><span lang="en">Types <code>/model</code></span></td>
-                        <td><span lang="zh">松开后粘贴</span><span lang="en">Pasted on release</span></td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/iterm2.webp" width="32" height="32" loading="lazy" alt=""></span><span>Claude Code · Codex · OpenCode<small><span lang="zh">在 iTerm2 里</span><span lang="en">in iTerm2</span></small></span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓<small><span lang="zh">仅 Codex</span><span lang="en">Codex only</span></small></td><td class="yes">✓</td>
                     </tr>
                     <tr>
-                        <th><span lang="zh">浏览器</span><span lang="en">Browsers</span></th>
-                        <td class="prog"><span lang="zh">Safari、Chrome、Edge、Brave、Firefox、Opera、Vivaldi</span><span lang="en">Safari, Chrome, Edge, Brave, Firefox, Opera, Vivaldi</span></td>
-                        <td><span lang="zh">切换标签页</span><span lang="en">Next tab</span></td>
-                        <td><span lang="zh">地址栏</span><span lang="en">Address bar</span></td>
-                        <td>✓</td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/safari.webp" width="32" height="32" loading="lazy" alt=""><img src="img/apps/chrome.webp" width="32" height="32" loading="lazy" alt=""></span><span><span lang="zh">浏览器</span><span lang="en">Browsers</span><small><span lang="zh">Safari、Chrome、Edge、Brave、Firefox、Opera、Vivaldi</span><span lang="en">Safari, Chrome, Edge, Brave, Firefox, Opera, Vivaldi</span></small></span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓<small><span lang="zh">标签页</span><span lang="en">tabs</span></small></td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td>
                     </tr>
                     <tr>
-                        <th><span lang="zh">聊天</span><span lang="en">Messaging</span></th>
-                        <td class="prog"><span lang="zh">微信、飞书 / Lark</span><span lang="en">WeChat, Feishu / Lark</span></td>
-                        <td><span lang="zh">搜索 / 切换聊天</span><span lang="en">Search / switch chats</span></td>
-                        <td>—</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <th><span lang="zh">其他应用</span><span lang="en">Any other app</span></th>
-                        <td class="prog"><span lang="zh">在设置里按 bundle ID 添加</span><span lang="en">Added in Settings by bundle ID</span></td>
-                        <td><span lang="zh">你指定的快捷键</span><span lang="en">The shortcut you assign</span></td>
-                        <td><span lang="zh">你指定的快捷键</span><span lang="en">The shortcut you assign</span></td>
-                        <td>✓</td>
+                        <th scope="row"><div class="app"><span class="icons"><img src="img/apps/wechat.webp" width="32" height="32" loading="lazy" alt=""><img src="img/apps/feishu.webp" width="32" height="32" loading="lazy" alt=""></span><span><span lang="zh">微信 · 飞书 / Lark</span><span lang="en">WeChat · Feishu / Lark</span></span></div></th>
+                        <td class="yes">✓</td><td class="yes">✓<small><span lang="zh">聊天</span><span lang="en">chats</span></small></td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <p class="note" lang="zh">不在表里的应用也有三件事能用：听写跟着键盘焦点走，原生输入框边说边写，其他应用在松开后粘贴一次，剪贴板随后恢复原样；双击切换 macOS 应用；手柄触摸板移动指针和点击。会话、模型这类应用动作只发给表里的应用和你自己加的规则，按完整的 bundle ID 匹配，不看窗口标题，每一项都能在设置里单独关掉。</p>
-        <p class="note" lang="en">Three things work in apps that are not in the table. Dictation follows the keyboard focus: native fields fill in as you speak, and everything else gets a single paste when you release, after which your clipboard is put back. A double press switches macOS apps. The controller's touchpad moves the pointer and clicks. App actions such as chats and models go only to the apps in the table and to rules you added yourself, matched by full bundle ID and never by window title, and each one can be turned off in Settings.</p>
-        <p class="disclaimer" lang="zh">各应用的细节、实测版本和已知边界见<a href="https://github.com/xuhao1/VibeWand/blob/main/docs/applications.md">应用适配</a>。微信只有 <code>⌘F</code> 的兼容映射，它的聊天控件读不到。</p>
-        <p class="disclaimer" lang="en">Per-app details, tested versions and known limits are in <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/applications.en.md">Applications</a>. WeChat has only a <code>⌘F</code> compatibility mapping, because its chat controls cannot be read.</p>
+        <p class="note" lang="zh">不在表里的应用也有三件事能用：听写跟着键盘焦点走，松开后文字就在输入框里；双击切换 macOS 应用；手柄触摸板移动指针和点击。想让别的应用也响应切换会话和换模型这两个键，在设置里添加它并指定快捷键。每个应用的适配都能在设置里单独关掉。</p>
+        <p class="note" lang="en">Three things work in apps that are not in the table. Dictation follows the keyboard focus, and the text is in the field when you release. A double press switches macOS apps. The controller's touchpad moves the pointer and clicks. To make another app answer the chat and model buttons, add it in Settings and assign the shortcuts. Each app's support can be turned off in Settings.</p>
+        <p class="disclaimer" lang="zh">浏览器里没有模型可换，同一个键改为跳到地址栏。微信的聊天控件读不到，会话键只是打开它自己的搜索，选择结果还没有在真实应用里验证过。应用的名称和图标是各自所有者的商标，这里只用来说明兼容性；VibeWand 与它们没有隶属、赞助或背书关系。</p>
+        <p class="disclaimer" lang="en">A browser has no model to change, so the same button jumps to the address bar. WeChat's chat controls cannot be read, so the chat button only opens WeChat's own search, and choosing a result there has not been verified in the real app. App names and icons are trademarks of their owners, shown only to indicate compatibility; VibeWand is not affiliated with, sponsored by or endorsed by them.</p>
     </div>
 </section>
 
@@ -360,8 +348,20 @@
         <div class="install">
             <article class="card">
                 <h3><span lang="zh">下载</span><span lang="en">Download</span></h3>
-                <p lang="zh">需要 macOS 26 以上和 M 系列芯片（0.8.4 是最后一个支持 macOS 13–15 的版本）。解压后把 <strong>VibeWand.app</strong> 拖进“应用程序”，打开它，然后：</p>
-                <p lang="en">Requires macOS 26 or later on an M-series Mac (0.8.4 is the last version for macOS 13 to 15). Unzip, drag <strong>VibeWand.app</strong> into Applications, open it, then:</p>
+                <p lang="zh">需要 macOS 26 以上和 M 系列芯片。解压后把 <strong>VibeWand.app</strong> 拖进“应用程序”，然后打开它。</p>
+                <p lang="en">Requires macOS 26 or later on an M-series Mac. Unzip, drag <strong>VibeWand.app</strong> into Applications, and open it.</p>
+                <div class="cta">
+                    <a class="btn primary" href="https://github.com/xuhao1/vibewand-site/releases/download/v0.9.0/VibeWand-0.9.0-macOS-arm64.zip">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8.5M4.5 7.5 8 11l3.5-3.5M3 14h10"/></svg>
+                        <span lang="zh">下载 VibeWand 0.9.0</span><span lang="en">Download VibeWand 0.9.0</span>
+                    </a>
+                    <a class="btn" href="https://github.com/xuhao1/vibewand-site/releases/tag/v0.9.0"><span lang="zh">说明与校验和</span><span lang="en">Notes and checksum</span></a>
+                </div>
+                <p class="fine" lang="zh">这个版本是临时签名，没有做 Apple 公证。首次打开如果被 macOS 阻止，在“系统设置 → 隐私与安全性”里允许，见 <a href="https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac">Apple 的说明</a>。</p>
+                <p class="fine" lang="en">This build is ad-hoc signed and not notarized by Apple. If macOS blocks the first launch, allow it under System Settings → Privacy &amp; Security; see <a href="https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac">Apple's guide</a>.</p>
+            </article>
+            <article class="card">
+                <h3><span lang="zh">打开以后</span><span lang="en">After it opens</span></h3>
                 <ol lang="zh">
                     <li>在“系统设置 → 隐私与安全性 → 辅助功能”里允许 VibeWand。没有这个权限它既看不到输入框也发不了按键。</li>
                     <li>接上设备。VibeKey 需要先退出 Ulanzi Studio，两者不能同时占用接收器。</li>
@@ -372,24 +372,6 @@
                     <li>Connect your device. For the VibeKey, quit Ulanzi Studio first; the two cannot share the receiver.</li>
                     <li>No device yet? Try Settings → Developer → Demo mode.</li>
                 </ol>
-                <div class="cta">
-                    <a class="btn primary" href="https://github.com/xuhao1/VibeWand/releases/download/v0.9.0/VibeWand-0.9.0-macOS-arm64.zip">
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8.5M4.5 7.5 8 11l3.5-3.5M3 14h10"/></svg>
-                        <span lang="zh">下载 VibeWand 0.9.0</span><span lang="en">Download VibeWand 0.9.0</span>
-                    </a>
-                    <a class="btn" href="https://github.com/xuhao1/VibeWand/releases/latest"><span lang="zh">版本说明</span><span lang="en">Release notes</span></a>
-                </div>
-                <p class="fine" lang="zh">这个版本是临时签名，没有做 Apple 公证，第一次打开要多点一步，见<a href="https://github.com/xuhao1/VibeWand/blob/main/docs/getting-started.md">快速开始</a>。</p>
-                <p class="fine" lang="en">This build is ad-hoc signed and not notarized by Apple, so the first launch takes one extra step. See <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/getting-started.en.md">Get started</a>.</p>
-            </article>
-            <article class="card">
-                <h3><span lang="zh">从源码编译</span><span lang="en">Build from source</span></h3>
-                <p lang="zh">需要 Xcode 26 以上和 Homebrew 的 Opus，最低系统是 macOS 26：</p>
-                <p lang="en">You need Xcode 26 or later and Opus from Homebrew. The minimum system is macOS 26:</p>
-<pre>brew install opus
-bash scripts/build-app.sh</pre>
-                <p lang="zh">产物在 <code>dist/VibeWand.app</code>。构建时会下载固定版本的 Node.js 和 DeepSeek Harness 作为命令模式的内核，应用因此约 265 MB；<code>VIBEWAND_SKIP_KERNEL=1</code> 可以跳过。更多细节见<a href="https://github.com/xuhao1/VibeWand/blob/main/docs/development.md">开发指南</a>。</p>
-                <p lang="en">The result is <code>dist/VibeWand.app</code>. The build downloads pinned versions of Node.js and DeepSeek Harness as the kernel for command mode, which makes the app about 265 MB; <code>VIBEWAND_SKIP_KERNEL=1</code> leaves it out. More in the <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/development.md">development guide</a>.</p>
             </article>
         </div>
     </div>
@@ -415,36 +397,9 @@ bash scripts/build-app.sh</pre>
 
 <footer>
     <div class="wrap">
-        <div class="cols">
-            <div>
-                <h3><span lang="zh">许可</span><span lang="en">License</span></h3>
-                <p lang="zh">源码采用 <a href="https://github.com/xuhao1/VibeWand/blob/main/LICENSE">PolyForm Noncommercial 1.0.0</a>。个人非商用可以使用、修改和分发；商用需要先联系作者取得单独授权，可以直接提一个<a href="https://github.com/xuhao1/VibeWand/issues/new?title=Commercial%20licensing%20inquiry">商业授权咨询</a>。因为限制了商业用途，它是源码公开，但不算 OSI 定义的开源。第三方组件保留各自的许可证。</p>
-                <p lang="en">The source is under <a href="https://github.com/xuhao1/VibeWand/blob/main/LICENSE">PolyForm Noncommercial 1.0.0</a>. Personal, noncommercial use, modification and distribution are allowed. Commercial use requires a separate license from the author; open a <a href="https://github.com/xuhao1/VibeWand/issues/new?title=Commercial%20licensing%20inquiry">commercial licensing inquiry</a> to ask. Because commercial use is restricted, this is source-available rather than open source as the OSI defines it. Third-party components keep their own licenses.</p>
-            </div>
-            <div>
-                <h3><span lang="zh">文档</span><span lang="en">Documentation</span></h3>
-                <p class="docs" lang="zh">
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/getting-started.md">快速开始</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/core-experience.md">默认操作</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/settings.md">设置与改键</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/voice-input.md">语音输入</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/command-mode.md">命令模式</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/computer-use.md">Computer use</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/device-templates.md">硬件指南</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/troubleshooting.md">问题排查</a>
-                </p>
-                <p class="docs" lang="en">
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/getting-started.en.md">Get started</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/core-experience.en.md">Default controls</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/settings.en.md">Settings and remapping</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/voice-input.md">Voice input</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/command-mode.en.md">Command mode</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/computer-use.en.md">Computer use</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/device-templates.en.md">Hardware guide</a>
-                    <a href="https://github.com/xuhao1/VibeWand/blob/main/docs/troubleshooting.en.md">Troubleshooting</a>
-                </p>
-            </div>
-        </div>
+        <h3><span lang="zh">许可</span><span lang="en">License</span></h3>
+        <p lang="zh">VibeWand 按 <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial 1.0.0</a> 许可发布：个人非商用可以使用和分发；商用需要先联系<a href="https://www.xuhao1.me">作者</a>取得单独授权。源码暂未公开。第三方组件保留各自的许可证，随应用附带。</p>
+        <p lang="en">VibeWand is released under <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial 1.0.0</a>: personal, noncommercial use and distribution are allowed. Commercial use requires a separate license from <a href="https://www.xuhao1.me">the author</a>. The source is not public yet. Third-party components keep their own licenses, which ship inside the app.</p>
         <div class="credit">
             <p lang="zh">作者：<strong>Dr. Xu</strong> · <a href="https://www.xuhao1.me">个人主页</a> · <a href="https://github.com/xuhao1">GitHub</a></p>
             <p lang="en">By <strong>Dr. Xu</strong> · <a href="https://www.xuhao1.me">Homepage</a> · <a href="https://github.com/xuhao1">GitHub</a></p>

@@ -300,6 +300,31 @@ h3 {
     margin-top: 14px;
 }
 
+.apps-strip {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 10px;
+    max-width: 960px;
+    margin: 36px auto 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--muted);
+}
+
+.apps-strip li {
+    width: 92px;
+}
+
+.apps-strip img {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 6px;
+}
+
 .scenes {
     max-width: 1280px;
     margin: 44px auto 0;
@@ -502,26 +527,30 @@ h3 {
 
 table {
     width: 100%;
-    min-width: 760px;
     border-collapse: collapse;
     font-size: 15px;
 }
 
 th,
 td {
-    text-align: left;
-    padding: 14px 20px;
+    text-align: center;
+    padding: 14px 12px;
     border-bottom: 1px solid var(--line);
-    vertical-align: top;
+}
+
+th:first-child {
+    text-align: left;
+    padding-left: 20px;
 }
 
 thead th {
     font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--muted);
     background: #faf9f6;
+    word-break: keep-all;
 }
 
 tbody tr:last-child td,
@@ -529,14 +558,51 @@ tbody tr:last-child th {
     border-bottom: 0;
 }
 
-tbody th {
+.app {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-weight: 600;
-    color: var(--muted);
-    white-space: nowrap;
 }
 
-td.prog {
-    font-weight: 600;
+.app .icons {
+    display: flex;
+    flex: none;
+}
+
+.app img {
+    width: 32px;
+    height: 32px;
+}
+
+.app img + img {
+    margin-left: -6px;
+}
+
+.app small {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+td.yes {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--accent);
+}
+
+td.yes small {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    word-break: keep-all;
+}
+
+td.no {
+    color: #b7bac9;
 }
 
 /* Computer use */
@@ -645,16 +711,6 @@ td.prog {
     font-size: 14px;
 }
 
-pre {
-    margin: 18px 0;
-    padding: 18px 20px;
-    border-radius: 14px;
-    background: var(--night);
-    color: #e6e5ff;
-    font: 14px/1.7 var(--mono);
-    overflow-x: auto;
-}
-
 /* Privacy */
 
 .privacy .body {
@@ -675,20 +731,12 @@ footer {
     color: var(--muted);
 }
 
-footer .cols {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 48px;
+footer p {
+    max-width: 56em;
 }
 
 footer p + p {
     margin-top: 12px;
-}
-
-footer .docs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
 }
 
 footer h3 {
@@ -742,8 +790,7 @@ footer .credit {
     .paths,
     .rules,
     .install,
-    .privacy .body,
-    footer .cols {
+    .privacy .body {
         grid-template-columns: 1fr;
     }
 
@@ -776,6 +823,52 @@ footer .credit {
 
     h2 br {
         display: none;
+    }
+
+    .apps-strip {
+        gap: 14px 4px;
+    }
+
+    .apps-strip li {
+        width: 76px;
+    }
+
+    .apps-strip img {
+        width: 52px;
+        height: 52px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 12px 3px;
+    }
+
+    th:first-child {
+        padding-left: 12px;
+    }
+
+    thead th {
+        font-size: 11px;
+        letter-spacing: 0;
+        text-transform: none;
+    }
+
+    .app {
+        gap: 8px;
+    }
+
+    .app img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .app small,
+    td.yes small {
+        font-size: 11px;
     }
 
     .scenes {
